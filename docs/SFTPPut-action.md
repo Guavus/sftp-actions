@@ -5,36 +5,33 @@ SFTP Put
 [![Build Status](https://travis-ci.org/hydrator/sftp-actions.svg?branch=develop)](https://travis-ci.org/hydrator/sftp-actions) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) <img src="https://cdap-users.herokuapp.com/assets/cdap-action.svg"/>
 
 
-SFTP put allows uploading of file(s) from filesystem (local/HDFS) to FTP server. File Regex can also be used
-to filter only the files that are of interest.
+SFTP Put is a Guavus Enterprise Accelerator that is used for uploading of file(s) from filesystem (local/HDFS) to an FTP server. File Regex can be used to filter the files of interest.
 
 
 Usage Notes
 -----------
-In order perform SFTP Put, we require host and port on which the SFTP server is running. SFTP implements secure file
-transfer over SSH. Typically port number 22 is used for SFTP(which is also default port for SSH). We also require valid
-credentials in the form of user name and password. Please make sure that you are able to SSH to the SFTP server using
+In order to perform SFTP Put, we require a host and port on which the SFTP server is running. SFTP implements a secure file
+transfer over SSH. Typically, port number 22 is used for SFTP (which is also the default port for SSH). We also require valid
+credentials in the form of user name and password. Please make sure that you are able to connect SSH to the SFTP server using
 specified user and password. SSH connection to SFTP server can be customized by providing additional configurations
-such as enable host key checking by setting configuration property 'StrictHostKeyChecking' to 'yes'. These additional
+such as by enabling host key checking by setting configuration property 'StrictHostKeyChecking' to 'yes'. These additional
 configurations can be specified using `Properties for SSH` section.
 
-Directory/File on the Filesystem which needs to be copied can be specified using `Source Path` property. The specified
-path should exist. `Destination directory` is the absolute path of the directory on the FTP Server where the files
-will be copied. If destination directory does not exists, then it will be created first.
+Directory/File on the Filesystem which needs to be copied can be specified using `Source Path` property. The specified path should exist. `Destination directory` is the absolute path of the directory on the FTP Server where the files will be copied. If a destination directory does not exist, then it will be created first.
 
 Plugin Configuration
 --------------------
 
 | Configuration | Required | Default | Description |
 | :------------ | :------: | :----- | :---------- |
-| **Host** | **Y** | N/A | Specifies the host name of the SFTP server.|
-| **Port** | **N** | 22 | Specifies the port on which SFTP server is running.|
-| **User** | **Y** | N/A | Specifies the name of the user which will be used to connect to the SFTP server.|
-| **Password** | **Y** | N/A | Specifies the password of the user.|
-| **Source Path** | **Y** | N/A | Path of file or directory on the file system which is to be copied.|
+| **Host** | **Y** | N/A | Specify the host name of the SFTP server.|
+| **Port** | **N** | 22 | Specify the port on which SFTP server is running.|
+| **User** | **Y** | N/A | Specify the name of the user which will be used to connect to the SFTP server.|
+| **Password** | **Y** | N/A | Specify the password of the user.|
+| **Source Path** | **Y** | N/A | The path of file or directory on the file system which is to be copied.|
 | **Destination Directory** | **Y** | N/A | Destination directory on the FTP Server, where files need to be copied. If directory does not exist, it will lbe created.|
 | **File Name Regex** | **N** | .* | Regex to choose only the files that are of interest. All files will be copied by default.|
-| **Properties for SSH** | **N** | N/A | Specifies the properties that are used to configure SSH connection to the FTP server. For example to enable verbose logging add property 'LogLevel' with value 'VERBOSE'. To enable host key checking set 'StrictHostKeyChecking' to 'yes'. SSH can be configured with the properties described here 'https://linux.die.net/man/5/ssh_config'. |
+| **Properties for SSH** | **N** | N/A | Specify the properties that are used to configure an SSH connection to the FTP server. For example, to enable verbose logging, add property 'LogLevel' with value 'VERBOSE'. To enable host key checking, set 'StrictHostKeyChecking' to 'yes'. SSH can be configured with the properties described here 'https://linux.die.net/man/5/ssh_config'. |
 
 
 Build
@@ -45,8 +42,7 @@ To build this plugin:
    mvn clean package
 ```
 
-The build will create a .jar and .json file under the ``target`` directory.
-These files can be used to deploy your plugins.
+The build will create a .jar and .json file under the ``target`` directory. These files can be used to deploy your plugins.
 
 Deployment
 ----------
@@ -64,10 +60,7 @@ CDAP User Group and Development Discussions:
 
 * `cdap-user@googlegroups.com <https://groups.google.com/d/forum/cdap-user>`
 
-The *cdap-user* mailing list is primarily for users using the product to develop
-applications or building plugins for appplications. You can expect questions from
-users, release announcements, and any other discussions that we think will be helpful
-to the users.
+The *cdap-user* mailing list is primarily for users using the product to develop applications or building plugins for appplications. You can expect questions from users, release announcements and any other discussions that we think will be helpful to the users.
 
 ## Slack Channel
 
@@ -78,8 +71,7 @@ CDAP Slack Channel: http://cdap-users.herokuapp.com/
 
 Copyright © 2017 Cask Data, Inc.
 
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
-in compliance with the License. You may obtain a copy of the License at
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
 http://www.apache.org/licenses/LICENSE-2.0
 
