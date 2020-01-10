@@ -60,7 +60,7 @@ CDAP User Group and Development Discussions:
 
 * `cdap-user@googlegroups.com <https://groups.google.com/d/forum/cdap-user>`
 
-The *cdap-user* mailing list is primarily for users using the product to develop applications or building plugins for appplications. You can expect questions from users, release announcements and any other discussions that we think will be helpful to the users.
+The *cdap-user* mailing list is primarily for users using the product to develop applications or building plugins for appplications. You can expect questions from users, release announcements, and start any other discussions that you think will be helpful to the users.
 
 ## Slack Channel
 
