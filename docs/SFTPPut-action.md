@@ -1,10 +1,6 @@
 SFTP Put
 ========
 
-<a href="https://cdap-users.herokuapp.com/"><img alt="Join CDAP community" src="https://cdap-users.herokuapp.com/badge.svg?t=sftp-actions"/></a>
-[![Build Status](https://travis-ci.org/hydrator/sftp-actions.svg?branch=develop)](https://travis-ci.org/hydrator/sftp-actions) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) <img src="https://cdap-users.herokuapp.com/assets/cdap-action.svg"/>
-
-
 SFTP Put is a Guavus Enterprise Accelerator that is used for uploading of file(s) from filesystem (local/HDFS) to an FTP server. File Regex can be used to filter the files of interest.
 
 
@@ -31,56 +27,31 @@ Plugin Configuration
 | **Source Path** | **Y** | N/A | The path of file or directory on the file system which is to be copied.|
 | **Destination Directory** | **Y** | N/A | Destination directory on the FTP Server, where files need to be copied. If directory does not exist, it will lbe created.|
 | **File Name Regex** | **N** | .* | Regex to choose only the files that are of interest. All files will be copied by default.|
-| **Properties for SSH** | **N** | N/A | Specify the properties that are used to configure an SSH connection to the FTP server. For example, to enable verbose logging, add property 'LogLevel' with value 'VERBOSE'. To enable host key checking, set 'StrictHostKeyChecking' to 'yes'. SSH can be configured with the properties described here 'https://linux.die.net/man/5/ssh_config'. |
+| **Properties for SSH** | **N** | N/A | Specify the properties that are used to configure an SSH connection to the FTP server. For example, to enable verbose logging, add property 'LogLevel' with value 'VERBOSE'. To enable host key checking, set 'StrictHostKeyChecking' to 'yes'. SSH can be configured with the properties described here https://linux.die.net/man/5/ssh_config. |
 
 
-Build
------
-To build this plugin:
-
+Example
+--------
+```json
+{
+   "name": "SFTPPut",
+   "plugin": {
+      "name": "SFTPPut",
+      "type": "action",
+      "label": "SFTPPut",
+      "artifact": {
+      "name": "sftp-actions",
+      "version": "1.3.0",
+      "scope": "USER"
+      },
+      "properties": {
+      "host": "192.168.192.123",
+      "port": "22",
+      "userName": "dev",
+      "password": "dev@123",
+      "srcPath": "/tmp/dummy.csv",
+      "destDirectory": "/tmp"
+      }
+   }
+}
 ```
-   mvn clean package
-```
-
-The build will create a .jar and .json file under the ``target`` directory. These files can be used to deploy your plugins.
-
-Deployment
-----------
-You can deploy your plugins using the CDAP CLI:
-
-    > load artifact <target/sftp-actions-<version>.jar config-file <target/sftp-actions-<version>.json>
-
-For example, if your artifact is named 'sftp-actions-1.0.0':
-
-    > load artifact target/sftp-actions-1.0.0.jar config-file target/sftp-actions-1.0.0.json
-
-## Mailing Lists
-
-CDAP User Group and Development Discussions:
-
-* `cdap-user@googlegroups.com <https://groups.google.com/d/forum/cdap-user>`
-
-The *cdap-user* mailing list is primarily for users using the product to develop applications or building plugins for appplications. You can expect questions from users, release announcements, and start any other discussions that you think will be helpful to the users.
-
-## Slack Channel
-
-CDAP Slack Channel: http://cdap-users.herokuapp.com/
-
-
-## License and Trademarks
-
-Copyright © 2017 Cask Data, Inc.
-
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
-
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software distributed under the
-License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
-either express or implied. See the License for the specific language governing permissions
-and limitations under the License.
-
-Cask is a trademark of Cask Data, Inc. All rights reserved.
-
-Apache, Apache HBase, and HBase are trademarks of The Apache Software Foundation. Used with
-permission. No endorsement by The Apache Software Foundation is implied by the use of these marks.
