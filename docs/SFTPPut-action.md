@@ -1,7 +1,7 @@
 SFTP Put
 ========
 
-SFTP Put is a Guavus Enterprise Accelerator that is used for uploading of file(s) from filesystem (local/HDFS) to an FTP server. File Regex can be used to filter the files of interest.
+SFTP Put is used for uploading of file(s) from filesystem (local/HDFS) to an FTP server. File Regex can be used to filter the files of interest.
 
 
 Usage Notes
