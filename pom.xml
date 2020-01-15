@@ -58,8 +58,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <cdap.version>5.1.2046</cdap.version>
-    <hydrator.version>2.1.1-SNAPSHOT</hydrator.version>
+    <cdap.version>5.1.2047</cdap.version>
+    <hydrator.version>2.1.0</hydrator.version>
     <guava.version>13.0.1</guava.version>
     <jsch.version>0.1.53</jsch.version>
     <hadoop.version>2.3.0</hadoop.version>
