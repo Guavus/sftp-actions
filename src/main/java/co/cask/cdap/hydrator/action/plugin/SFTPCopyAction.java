@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
 /**
  * An {@link Action} that will copy files from FTP server to the destination directory.
  */
-@Plugin(type = Action.PLUGIN_TYPE)
+//@Plugin(type = Action.PLUGIN_TYPE)
 @Name("SFTPCopy")
 public class SFTPCopyAction extends Action {
   private static final Logger LOG = LoggerFactory.getLogger(SFTPCopyAction.class);

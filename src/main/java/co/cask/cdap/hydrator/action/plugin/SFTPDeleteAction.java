@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
 /**
  * An {@link Action} to delete files on the SFTP server.
  */
-@Plugin(type = Action.PLUGIN_TYPE)
+//@Plugin(type = Action.PLUGIN_TYPE)
 @Name("SFTPDelete")
 public class SFTPDeleteAction extends Action {
 
