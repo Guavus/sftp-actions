@@ -36,6 +36,61 @@
           "label": "Destination directory",
           "name": "destDirectory"
         },
+
+        {
+          "widget-type": "content-filter",
+          "label": "Enable proxy support",
+          "name": "enableProxy",
+          "widget-attributes": {
+            "default": "false",
+            "options": [
+              "true",
+              "false"
+            ]
+          }
+        },
+
+        {
+          "widget-type": "textbox",
+          "label": "Proxy server host",
+          "name": "proxyHost",
+          "widget-attributes": {
+            "filters": [{
+              "widget-name": "enableProxy",
+              "filter-values": [
+                "true"
+              ]
+            }]
+          }
+        },
+
+        {
+          "widget-type": "textbox",
+          "label": "Username for proxy server",
+          "name": "proxyUsername",
+          "widget-attributes": {
+            "filters": [{
+              "widget-name": "enableProxy",
+              "filter-values": [
+                "true"
+              ]
+            }]
+          }
+        },
+        {
+          "widget-type": "password",
+          "label": "Password for proxy server",
+          "name": "proxyPassword",
+          "widget-attributes": {
+            "filters": [{
+              "widget-name": "enableProxy",
+              "filter-values": [
+                "true"
+              ]
+            }]
+          }
+        },
+
         {
           "widget-type": "select",
           "label": "Uncompress",

@@ -16,10 +16,7 @@
 
 package co.cask.cdap.hydrator.action.common;
 
-import com.jcraft.jsch.Channel;
-import com.jcraft.jsch.ChannelSftp;
-import com.jcraft.jsch.JSch;
-import com.jcraft.jsch.Session;
+import com.jcraft.jsch.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,6 +30,18 @@ public class SFTPConnector implements AutoCloseable {
   private static final Logger LOG = LoggerFactory.getLogger(SFTPConnector.class);
   private final Session session;
   private final Channel channel;
+  private JSch jSch;
+
+//  public Session createSession(String host, int port, String username, String password, Map<String, String> sessionProperties) throws JSchException {
+//    if(jSch == null) {
+//      jSch = new JSch();
+//    }
+//    this.session = jSch.getSession(username, host, port);
+//  }
+
+//  public SFTPConnector(String host, int port, String username, String password, boolean proxyEnabled, Map<String, String> sessionProperties) {
+//
+//  }
 
   public SFTPConnector(String host, int port, String userName, String password, Map<String, String> sessionProperties)
     throws Exception {
@@ -46,6 +55,10 @@ public class SFTPConnector implements AutoCloseable {
     session.setConfig(properties);
     LOG.info("Connecting to Host: {}, Port: {}, with User: {}", host, port, userName);
     session.connect(30000);
+
+//    if()
+//    int assignedPort = session.setPortForwardingL(0, host, port);
+
     channel = session.openChannel("sftp");
     channel.connect();
   }

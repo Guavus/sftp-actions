@@ -54,6 +54,27 @@ public class SFTPActionConfig extends PluginConfig {
   @Nullable
   public String sshProperties;
 
+  @Macro
+  @Nullable
+  @Description("Enables proxy configuration. User will be asked to provide additional" +
+          "proxy server details like host, port and credentials. Sftp connection will be made first by connecting to proxy server and then to actual sftp server.")
+  public String enableProxy;
+
+  @Macro
+  @Nullable
+  @Description("Host of proxy server. Connection to sftp server will be made through this host")
+  public String proxyHost;
+
+  @Macro
+  @Nullable
+  @Description("User to connect to proxy server.")
+  public String proxyUsername;
+
+  @Macro
+  @Nullable
+  @Description("Password to connect to proxy server.")
+  public String proxyPassword;
+
   public String getHost() {
     return host;
   }
@@ -85,5 +106,25 @@ public class SFTPActionConfig extends PluginConfig {
       properties.put(key, val);
     }
     return properties;
+  }
+
+  @Nullable
+  public boolean getEnableProxy() {
+    return Boolean.valueOf(enableProxy);
+  }
+
+  @Nullable
+  public String getProxyHost() {
+    return proxyHost;
+  }
+
+  @Nullable
+  public String getProxyUsername() {
+    return proxyUsername;
+  }
+
+  @Nullable
+  public String getProxyPassword() {
+    return proxyPassword;
   }
 }
